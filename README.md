@@ -1,16 +1,88 @@
-# React + Vite
+👤 Cadastro de Usuários — React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação front-end desenvolvida em React para cadastro e navegação de usuários, integrada a uma API REST.
+O projeto foi criado com foco em organização de componentes, boas práticas de hooks e comunicação com backend.
 
-Currently, two official plugins are available:
+📸 Preview da aplicação
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+A aplicação possui duas telas principais:
 
-## React Compiler
+Tela de Cadastro de Usuário
+Tela de Listagem de Usuários
+🚀 Funcionalidades
+Cadastro de novos usuários
+Envio de dados para API REST
+Navegação entre páginas
+Componentização e reutilização de UI
+Interface simples, limpa e escalável
+🧠 Conceitos aplicados
+React Hooks (useRef, useNavigate)
+Componentização
+Separação de responsabilidades
+Consumo de API com Axios
+Estrutura de projeto escalável
+🛠️ Tecnologias utilizadas
+React
+React Router DOM
+JavaScript (ES6+)
+Axios
+Styled Components (ou estrutura de estilos modular)
+📂 Estrutura de Pastas
+src
+│
+├── components
+│   ├── Button
+│   └── TopBackground
+│
+├── pages
+│   ├── Home
+│   └── ListaUsuarios
+│
+├── services
+│   └── api.js
+│
+└── styles
+⚙️ Instalação e execução
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Clone o repositório:
 
-## Expanding the ESLint configuration
+git clone https://github.com/seu-usuario/seu-repo.git
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Entre na pasta do projeto:
+
+cd seu-repo
+
+Instale as dependências:
+
+npm install
+
+Execute o projeto:
+
+npm run dev
+# ou
+npm start
+🔌 Configuração da API
+
+O projeto espera uma API rodando com a rota:
+
+POST /usuarios
+
+Payload enviado:
+
+{
+  "name": "Nome do usuário",
+  "age": 25,
+  "email": "email@email.com"
+}
+
+Certifique-se de configurar corretamente a baseURL no arquivo:
+
+src/services/api.js
+
+Exemplo:
+
+import axios from "axios";
+
+export default axios.create({
+  baseURL: "http://localhost:3000"
+});
